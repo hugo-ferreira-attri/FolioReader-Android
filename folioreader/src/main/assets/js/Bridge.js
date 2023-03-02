@@ -225,25 +225,31 @@ $(function () {
 
             this.highlighter = rangy.createHighlighter();
 
-            this.highlighter.addClassApplier(rangy.createClassApplier("highlight_yellow", {
+            this.highlighter.addClassApplier(rangy.createClassApplier("ligth_gray", {
                 ignoreWhiteSpace: true,
                 tagNames: ["span", "a"]
             }));
 
-            this.highlighter.addClassApplier(rangy.createClassApplier("highlight_green", {
+            this.highlighter.addClassApplier(rangy.createClassApplier("dark_gray", {
                 ignoreWhiteSpace: true,
                 tagNames: ["span", "a"]
             }));
 
-            this.highlighter.addClassApplier(rangy.createClassApplier("highlight_blue", {
+            this.highlighter.addClassApplier(rangy.createClassApplier("blue_mark", {
                 ignoreWhiteSpace: true,
                 tagNames: ["span", "a"]
             }));
 
-            this.highlighter.addClassApplier(rangy.createClassApplier("highlight_pink", {
+            this.highlighter.addClassApplier(rangy.createClassApplier("yelow_mark", {
                 ignoreWhiteSpace: true,
                 tagNames: ["span", "a"]
             }));
+
+            this.highlighter.addClassApplier(rangy.createClassApplier("dark_blue_mark", {
+                 ignoreWhiteSpace: true,
+                 tagNames: ["span", "a"]
+            }));
+
 
             this.highlighter.addClassApplier(rangy.createClassApplier("highlight_underline", {
                 ignoreWhiteSpace: true,

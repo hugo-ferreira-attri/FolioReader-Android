@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottomMark"
+        android:icon="@drawable/marcador_full"
+        android:title="Marcações"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/bottom_minus_icon"
+        android:icon="@drawable/minus"
+        android:title="font_minus"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/title_font"
+        android:icon="@drawable/aa"
+        android:title=" "
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/bottom_plus_icon"
+        android:icon="@drawable/plus"
+        android:title="font_plus"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/app_bar_switch"
+        android:title="Switch"
+        app:actionLayout="@layout/switch_item"
+        app:showAsAction="always" />
+
+</menu>

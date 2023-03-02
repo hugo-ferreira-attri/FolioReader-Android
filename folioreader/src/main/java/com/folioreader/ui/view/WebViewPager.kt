@@ -10,6 +10,7 @@ import androidx.core.view.GestureDetectorCompat
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.folioreader.R
+import com.folioreader.util.AppUtil
 
 class WebViewPager : ViewPager {
 
@@ -80,11 +81,13 @@ class WebViewPager : ViewPager {
     }
 
     fun setHorizontalPageCount(horizontalPageCount: Int) {
-        //Log.d(LOG_TAG, "-> horizontalPageCount = " + horizontalPageCount);
+        Log.d(LOG_TAG, "-> horizontalPageCount = " + horizontalPageCount);
 
         this.horizontalPageCount = horizontalPageCount
         adapter = WebViewPagerAdapter()
         currentItem = 0
+
+         AppUtil.saveTotalPages(context, horizontalPageCount)!!
 
         if (folioWebView == null)
             folioWebView = (parent as View).findViewById(R.id.folioWebView)
@@ -93,6 +96,7 @@ class WebViewPager : ViewPager {
     @JavascriptInterface
     fun setCurrentPage(pageIndex: Int) {
         Log.v(LOG_TAG, "-> setCurrentItem -> pageIndex = $pageIndex")
+        AppUtil.saveCurrentPage(context, pageIndex)
 
         uiHandler!!.post { setCurrentItem(pageIndex, false) }
     }

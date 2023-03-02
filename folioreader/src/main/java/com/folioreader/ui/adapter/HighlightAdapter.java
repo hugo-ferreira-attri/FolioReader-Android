@@ -1,5 +1,6 @@
 package com.folioreader.ui.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -42,7 +43,7 @@ public class HighlightAdapter extends RecyclerView.Adapter<HighlightAdapter.High
     }
 
     @Override
-    public void onBindViewHolder(final HighlightHolder holder, final int position) {
+    public void onBindViewHolder(final HighlightHolder holder, @SuppressLint("RecyclerView") final int position) {
 
         holder.container.postDelayed(new Runnable() {
             @Override

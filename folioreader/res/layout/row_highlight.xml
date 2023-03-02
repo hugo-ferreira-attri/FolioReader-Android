@@ -15,7 +15,8 @@
             android:background="#8A2BE2"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:src="@drawable/edit_note" />
+            android:src="@drawable/edit_note"
+         />
 
         <ImageView
             android:id="@+id/iv_delete"
@@ -24,7 +25,8 @@
             android:background="#FF3B30"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:src="@drawable/trash" />
+            android:src="@drawable/lixeira2"
+            />
     </LinearLayout>
 
     <RelativeLayout
@@ -38,7 +40,8 @@
             android:id="@+id/tv_highlight_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="20 sep 2016"
+            android:bufferType="normal"
+            android:text="@string/fake_data"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -61,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/utv_highlight_content"
+            android:bufferType="normal"
             android:ellipsize="end"
             android:text=""
             android:textColor="@color/black"

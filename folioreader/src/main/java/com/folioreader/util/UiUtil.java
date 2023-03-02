@@ -115,6 +115,8 @@ public class UiUtil {
         }
     }
 
+
+
     public static void setBackColorToTextView(UnderlinedTextView textView, String type) {
         Context context = textView.getContext();
         if (type.equals("highlight_yellow")) {

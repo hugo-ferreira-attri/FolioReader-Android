@@ -1,5 +1,6 @@
 package com.folioreader.ui.activity
 
+import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -154,6 +155,7 @@ class SearchActivity : AppCompatActivity(), OnItemClickListener {
         })
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onNewIntent(intent: Intent) {
         Log.v(LOG_TAG, "-> onNewIntent")
 

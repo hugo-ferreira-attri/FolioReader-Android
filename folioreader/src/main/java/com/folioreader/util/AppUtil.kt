@@ -9,6 +9,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.folioreader.Config
 import com.folioreader.Constants
+import com.folioreader.util.SharedPreferenceUtil.getSharedPreferencesInt
 import com.folioreader.util.SharedPreferenceUtil.getSharedPreferencesString
 import org.json.JSONArray
 import org.json.JSONException
@@ -105,6 +106,40 @@ class AppUtil {
                 Log.e(LOG_TAG, e.message)
             }
 
+        }
+
+        fun saveTotalPages(context: Context?, int: Int) {
+
+            SharedPreferenceUtil.putSharedPreferencesInt(
+                context, "totalPages",
+                int
+            )
+
+        }
+
+        fun saveCurrentPage(context: Context?, int: Int) {
+
+            SharedPreferenceUtil.putSharedPreferencesInt(
+                context, "currentPage",
+                int
+            )
+
+        }
+
+        fun getCurrentPage(context: Context?): Int?{
+            val page = getSharedPreferencesInt(context, "currentPage", 0)
+            if(page !=null){
+                return  page
+            }
+            return null
+        }
+
+        fun getTotalPages(context: Context?): Int?{
+            val pages = getSharedPreferencesInt(context, "totalPages", 0)
+            if(pages !=null){
+                return  pages
+            }
+            return null
         }
 
         @JvmStatic

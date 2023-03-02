@@ -5,6 +5,7 @@ package com.folioreader.ui.view;
  */
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -2371,6 +2372,7 @@ public class DirectionalViewpager extends ViewGroup {
         }
     }
 
+    @SuppressLint("WrongConstant")
     private void enableLayers(boolean enable) {
         final int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
@@ -3246,14 +3248,13 @@ public class DirectionalViewpager extends ViewGroup {
      * <p>A fake drag can be useful if you want to synchronize the motion of the ViewPager
      * with the touch scrolling of another view, while still letting the ViewPager
      * control the snapping motion and fling behavior. (e.g. parallax-scrolling tabs.)
-     * Call {@link #fakeDragBy(float)} to simulate the actual drag motion. Call
+     * Call  to simulate the actual drag motion. Call
      * {@link #endFakeDrag()} to complete the fake drag and fling as necessary.
      * <p>
      * <p>During a fake drag the ViewPager will ignore all touch events. If a real drag
      * is already in progress, this method will return false.
      *
      * @return true if the fake drag began successfully, false if it could not be started.
-     * @see #fakeDragBy(float)
      * @see #endFakeDrag()
      */
     public boolean beginFakeDrag() {
@@ -3422,7 +3423,6 @@ public class DirectionalViewpager extends ViewGroup {
      *
      * @return true if currently in a fake drag, false otherwise.
      * @see #beginFakeDrag()
-     * @see #fakeDragBy(float)
      * @see #endFakeDrag()
      */
     public boolean isFakeDragging() {
@@ -3874,7 +3874,7 @@ public class DirectionalViewpager extends ViewGroup {
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         // Dispatch scroll events from this ViewPager.
-        if (event.getEventType() == AccessibilityEventCompat.TYPE_VIEW_SCROLLED) {
+        if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
             return super.dispatchPopulateAccessibilityEvent(event);
         }
 
@@ -3928,7 +3928,7 @@ public class DirectionalViewpager extends ViewGroup {
                 recordCompat = AccessibilityRecordCompat.obtain();
             }
             recordCompat.setScrollable(canScroll());
-            if (event.getEventType() == AccessibilityEventCompat.TYPE_VIEW_SCROLLED
+            if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED
                     && mAdapter != null) {
                 recordCompat.setItemCount(mAdapter.getCount());
                 recordCompat.setFromIndex(mCurItem);

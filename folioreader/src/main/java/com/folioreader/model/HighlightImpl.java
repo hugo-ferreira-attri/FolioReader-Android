@@ -72,11 +72,11 @@ public class HighlightImpl implements Parcelable, HighLight {
     private String note;
 
     public enum HighlightStyle {
-        Yellow,
-        Green,
-        Blue,
-        Pink,
-        Underline,
+        LightGray,
+        DarkGray,
+        BlueMark,
+        YelowMark,
+        DarkBlueMark,
         TextColor,
         DottetUnderline,
         Normal;
@@ -86,16 +86,16 @@ public class HighlightImpl implements Parcelable, HighLight {
          */
         public static String classForStyle(HighlightStyle style) {
             switch (style) {
-                case Yellow:
-                    return "highlight_yellow";
-                case Green:
-                    return "highlight_green";
-                case Blue:
-                    return "highlight_blue";
-                case Pink:
-                    return "highlight_pink";
-                case Underline:
-                    return "highlight_underline";
+                case LightGray:
+                    return "ligth_gray";
+                case DarkGray:
+                    return "dark_gray";
+                case BlueMark:
+                    return "blue_mark";
+                case YelowMark:
+                    return "yelow_mark";
+                case DarkBlueMark:
+                    return "dark_blue_mark";
                 case DottetUnderline:
                     return "mediaOverlayStyle1";
                 case TextColor:
